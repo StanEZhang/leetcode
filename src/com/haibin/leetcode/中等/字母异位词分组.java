@@ -12,6 +12,22 @@ import java.util.List;
  * @author: zhanghaibin
  * @create: 2023-09-20
  */
+
+/**
+ * 思路：
+ *  最主要的如何判断他们是异位词？？？？？？？？？？？
+ *  把字符串变成字符数组
+ *  对字符数组进行排序
+ *  排完序在转回字符串，比较，一样就是异位词！！！
+ *
+ *  然后就是使用map来查找key,key一样的就是异位词，就把这个异位词添加进map对应的key的value
+ *  这个value是个list
+ *
+ *  最后返回一个list,把map的values全放进去。
+ *
+ */
+
+
 public class 字母异位词分组 {
     /**
      * 自己的复杂实现
