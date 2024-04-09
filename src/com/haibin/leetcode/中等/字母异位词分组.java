@@ -37,7 +37,6 @@ public class 字母异位词分组 {
     public List<List<String>> groupAnagrams01(String[] strs) {
 
         HashMap<String, List<String>> map = new HashMap<>();
-        ArrayList<String> list = new ArrayList<>();
         for (String str : strs) {
             // str字符串排序
             char[] array = str.toCharArray();
@@ -51,7 +50,7 @@ public class 字母异位词分组 {
             values.add(str);
             map.put(key, values);
         }
-        List<List<String>> result = new ArrayList<List<String>>();
+        List<List<String>> result = new ArrayList<>();
         result.addAll(map.values());
         return result;
     }

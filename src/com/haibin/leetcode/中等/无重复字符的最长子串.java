@@ -1,5 +1,7 @@
 package com.haibin.leetcode.中等;
 
+import sun.security.jca.GetInstance;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -21,6 +23,21 @@ public class 无重复字符的最长子串 {
         int i = 无重复字符的最长子串.lengthOfLongestSubstring(s);
         System.out.println(i);
     }
+
+    /**
+     * 解析：
+     * 使用滑动窗口，要做的是保证窗口内一直没有重复元素，
+     * 如何保证没有重复元素？用hashMap.
+     * 如果出现了重复元素怎么办？
+     * [0 1 2 3 4] 2 6 8 5
+     * [0 1 2 3 4 2] 6 8 5
+     * 0 1 2 [3 4 2] 6 8 5
+     * 窗口left移动到重复元素下标+1的位置
+     * 注意：left = Math.max(left,map.get(s.charAt(i)) + 1);
+     * 为什么要取与原left相比的最大值？因为存在a b b a的情况
+     * 因为map更新在下一步，没更新之前map里的a的下标依然是之前的，不取最大值就倒回去了，left又变成1了
+     */
+
     public int lengthOfLongestSubstring(String s) {
 
         if (s.length()==0) {
